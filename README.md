@@ -1,4 +1,4 @@
-# MaxConsole 0.1.0
+# MaxConsole 0.2.0
 
 MaxConsole is a simple wrapper on top of Rich's Console class that allows you to easily create a console with a custom theme.
 
