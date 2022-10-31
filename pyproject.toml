@@ -4,7 +4,7 @@ version = "0.2.0"
 description = "Themed Rich Conosle"
 authors = ["maxludden <dev@maxludden.com>"]
 license = "MIT"
-readme = "README.html"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
