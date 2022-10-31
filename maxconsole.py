@@ -1,6 +1,8 @@
 from rich.console import Console
 from rich.theme import Theme
 
+__version__ = "0.2.0"
+
 def get_theme() -> Theme:
     # . Hex Colors
     magenta = "#ff00ff"  #               #ff00ff
