@@ -1,7 +1,9 @@
+from gettext import install
 from rich.console import Console
 from rich.theme import Theme
+from rich.traceback import install as install_traceback
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 def get_theme() -> Theme:
     # . Hex Colors
@@ -58,6 +60,7 @@ def get_console(theme: Theme) -> Console:
     if not theme:
         theme = get_theme()
     console = Console(theme=theme, color_system="truecolor")
+    install_traceback(console=console, show_locals=True)
     return console
 
 if __name__ == "__main__":

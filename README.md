@@ -1,4 +1,12 @@
-# MaxConsole 0.2.0
+# MaxConsole 0.3.0
+
+## New in 0.3.0:
+
+Added rich tracebacks to the custom rich console that MacConsole generates.
+
+
+## Purpose
+
 
 MaxConsole is a simple wrapper on top of Rich's Console class that allows you to easily create a console with a custom theme.
 

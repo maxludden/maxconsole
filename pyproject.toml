@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "maxconsole"
-version = "0.2.0"
+version = "0.3.0"
 description = "Themed Rich Conosle"
 authors = ["maxludden <dev@maxludden.com>"]
 license = "MIT"
