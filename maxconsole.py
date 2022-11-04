@@ -1,9 +1,10 @@
-from gettext import install
+# MaxConsole.py
 from rich.console import Console
 from rich.theme import Theme
 from rich.traceback import install as install_traceback
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
+
 
 def get_theme() -> Theme:
     # . Hex Colors
@@ -24,7 +25,6 @@ def get_theme() -> Theme:
     grey = "#808080"  #                  #808080
     dark_grey = "#2e2e2e"  #             #2e2e2e
     black = "#000000"  #                 #000000
-
 
     theme_dict = {
         "magenta": "#ff00ff",  #         #ff00ff

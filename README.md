@@ -1,5 +1,6 @@
-# MaxConsole 0.3.0
+# MaxConsole 0.4.0
 
+<span style="color:#00ff00;">Changed project formatter to Black.
 ## New in 0.3.0:
 
 Added rich tracebacks to the custom rich console that MacConsole generates.
