@@ -38,7 +38,7 @@ from maxconsole import get_console
 console = get_console() # It's that easy.
 ```
 
-## Custimization
+## Customization
 
 Making your own theme isn't hard but it's nice to have one spelled out for you, without lifting a finger.
 
