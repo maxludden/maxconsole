@@ -1,17 +1,14 @@
-# MaxConsole 0.4.0
+# MaxConsole v0.5.0
 
-<span style="color:#00ff00;">Changed project formatter to Black.
-## New in 0.3.0:
-
-Added rich tracebacks to the custom rich console that MacConsole generates.
-
+[![PyPI](https://img.shields.io/pypi/v/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - License](https://img.shields.io/pypi/l/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/)
 
 ## Purpose
 
-
-MaxConsole is a simple wrapper on top of Rich's Console class that allows you to easily create a console with a custom theme.
+MaxConsole instantiates a singleton class that wraps the console provided by the awesome <a href="https://github.com/willmcgugan/rich/">rich</a> library.
 
 ## Installation
+
+MaxConsole is available on PyPI and can be installed with either pip, pdm, or your favorite package manager.
 
 ### Pip
 
@@ -19,17 +16,13 @@ MaxConsole is a simple wrapper on top of Rich's Console class that allows you to
 pip install maxconsole
 ```
 
-### Pipx (recommended)
+### PDM
 
 ```bash
-pipx install maxconsole
+pdm add maxconsole
 ```
 
-### Poetry
 
-```bash
-poetry add maxconsole
-```
 
 ## Usage
 ```python

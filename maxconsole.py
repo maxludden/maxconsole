@@ -1,54 +1,13 @@
-# MaxConsole.py
+# maxconsole/maxconsole.py
 from rich.console import Console
 from rich.theme import Theme
 from rich.traceback import install as install_traceback
+import threading
 
-__version__ = "0.4.0"
+__version__ = '0.5.0'
 
-def get_colors():
-    # Hex Colors
-    colors = {
-        "magenta": "#ff00ff",  #         #ff00ff
-        "purple": "#af00ff",  #          #af00ff
-        "blue_violet": "#5f00ff",  #       #5f00ff
-        "blue": "#0000ff",  #            #0000ff
-        "cornflower_blue": "#249df1",  #   #249df1
-        "cyan": "#00ffff",  #            #00ffff
-        "green": "#00ff00",  #           #00ff00
-        "yellow": "#ffff00",  #          #ffff00
-        "orange": "#ff8800",  #          #ff8800
-        "red": "#ff0000",  #             #ff0000
-        # Hex Tints
-        "white": "#ffffff",  #           #ffffff
-        "light_grey": "#e2e2e2",  #        #e2e2e2
-        "grey": "#808080",  #            #808080
-        "dark_grey": "#2e2e2e",  #         #2e2e2e
-        "black": "#000000"  #            #000000
-    }
-    return colors
-
-
-def get_theme() -> Theme:
-    # Hex Colors
-    magenta = "#ff00ff"  #               #ff00ff
-    purple = "#af00ff"  #                #af00ff
-    blue_violet = "#5f00ff"  #             #5f00ff
-    blue = "#0000ff"  #                  #0000ff
-    cornflower_blue = "#249df1"  #         #249df1
-    cyan = "#00ffff"  #                  #00ffff
-    green = "#00ff00"  #                 #00ff00
-    yellow = "#ffff00"  #                #ffff00
-    orange = "#ff8800"  #                #ff8800
-    red = "#ff0000"  #                   #ff0000
-
-    # Hex Tints
-    white = "#ffffff"  #                 #ffffff
-    light_grey = "#e2e2e2"  #              #e2e2e2
-    grey = "#808080"  #                  #808080
-    dark_grey = "#2e2e2e"  #               #2e2e2e
-    black = "#000000"  #                 #000000
-
-    theme_dict = {
+MAX_THEME = Theme(
+    {
         "magenta": "#ff00ff",  #         #ff00ff
         "purple": "#af00ff",  # P        #af00ff
         "blue_violet": "#5f00ff",  #       #5f00ff
@@ -75,16 +34,28 @@ def get_theme() -> Theme:
         "key": "italic magenta",#            #ff00ff
         "lines": "blue_violet",  #             #5f00ff
     }
-    theme = Theme(theme_dict)
-    return theme
+)
+class Singleton(type):
+    _instance_lock = threading.Lock()
+    def __init__(cls, *args, **kwargs):
+        cls.__instance = None
+        super().__init__(*args, **kwargs)
 
-def get_console(theme: Theme) -> Console:
-    if not theme:
-        theme = get_theme()
-    console = Console(theme=theme, color_system="truecolor")
-    install_traceback(console=console, show_locals=True)
-    return console
+    def __call__(cls, *args, **kwargs):
+        if cls.__instance is None:
+            with Singleton._instance_lock:
+                cls.__instance = super().__call__(*args, **kwargs)
+                return cls.__instance
+        else:
+            return cls.__instance
 
-if __name__ == "__main__":
-    theme = get_theme()
-    console = get_console(theme)
+class MaxConsole(Console, metaclass=Singleton):
+    """A custom themed console class that inherits from rich.console.Console"""
+    theme: Theme
+    def __init__ (self, theme: Theme = MAX_THEME, *args, **kwargs):
+        super().__init__(*args, **kwargs, theme=theme)
+        install_traceback(console=self)
+
+    def __call__(self, *args, **kwargs):
+        return self
+

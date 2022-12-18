@@ -19,11 +19,30 @@
         "list.hoverBackground": "#1e0051",
         "list.hoverForeground": "#dbbeff",
         "list.activeSelectionBackground": "#1e0051",
-        "gitDecoration.modifiedResourceForeground": "#00ff08",
-        "gitDecoration.untrackedResourceForeground": "#97fdff",
         "list.activeSelectionForeground": "#dbbeff",
         "list.focusForeground": "#1e0051",
         "list.focusBackground": "#dbbeff",
+        "list.inactiveFocusBackground": "#310046",
+        "list.deemphasizedForeground": "#dbbeff",
+        "list.inactiveSelectionBackground": "#1e0051",
+        "list.inactiveSelectionForeground": "#dbbeff",
+        "banner.background": "#121212",
+        "editor.findMatchBackground": "#0fefff89",
+        "editorInlayHint.parameterBackground": "#bb00ff",
+        "scrollbarSlider.background": "#403444",
+        "scrollbarSlider.hoverBackground": "#9500ffaa",
+        "terminal.tab.activeBorder": "#bb00ff",
+        "terminal.border": "#bb00ff",
+        "gitDecoration.modifiedResourceForeground": "#00ff08",
+        "gitDecoration.untrackedResourceForeground": "#97fdff",
         "sideBar.border": "#000000"
-    }
+    },
+    "cSpell.words": [
+        "truecolor"
+    ],
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
