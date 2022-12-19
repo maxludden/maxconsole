@@ -2,9 +2,11 @@
 
 [![PyPI](https://img.shields.io/pypi/v/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - License](https://img.shields.io/pypi/l/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/)
 
+![](https://i.imgur.com/4AtSGpB.png)
+
 ## Purpose
 
-MaxConsole instantiates a singleton class that wraps the console provided by the awesome <a href="https://github.com/willmcgugan/rich/">rich</a> library.
+MaxConsole instantiates a singleton class that wraps the console provided by the awesome <a href="https://github.com/willmcgugan/rich/">rich</a> library. It provides a simple interface for printing to the console, and is intended to be used as a global console object. It also has customized theme to allow for more variety of generic colors.
 
 ## Installation
 
@@ -26,16 +28,11 @@ pdm add maxconsole
 
 ## Usage
 ```python
-from maxconsole import get_console
+from maxconsole import MaxConsole
 
-console = get_console() # It's that easy.
+console = MaxConsole() # It's that easy.
 ```
 
-## Customization
-
-Making your own theme isn't hard but it's nice to have one spelled out for you, without lifting a finger.
-
-![maxconsole](maxconsole.svg)
 
 
 <hr />

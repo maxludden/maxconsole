@@ -2,42 +2,12 @@
 from rich.console import Console
 from rich.color import Color
 from rich.theme import Theme
+from rich.table import Table
 from rich.traceback import install as install_traceback
 import threading
 
 __version__ = '0.5.0'
 
-
-
-# MAX_THEME = Theme(
-#     {
-#         "magenta": "#ff00ff",  #         #ff00ff
-#         "purple": "#af00ff",  # P        #af00ff
-#         "blue_violet": "#5f00ff",  #       #5f00ff
-#         "blue": "bold #0000FF",  #       #0000ff
-#         "cornflower_blue": "#249df1",  #    #249df1
-#         "cyan": "#00ffff",  #            #00ffff
-#         "green": "#00ff00",  #           #00ff00
-#         "yellow": "#ffff00",  #          #ffff00
-#         "orange": "#ff8800",  #          #ff8800
-#         "red": "#ff0000",  #             #ff0000
-#         "white": "#ffffff",  #           #ffffff
-#         "light_grey": "#e2e2e2",  #        #e2e2e2
-#         "grey": "#808080",  #            #808080
-#         "dark_grey": "#2e2e2e",  #         #2e2e2e
-#         "black": "#000000",  #           #000000
-#         "debug": "bold bright_cyan",  #        #00ffff
-#         "info": "bold cornflower_blue",  #      #249df1
-#         "success": "bold bright_green",  #     #00ff00
-#         "warning": "bold bright_yellow",  #    #ffff00
-#         "error": "bold orange1",  #            #ff8800
-#         "critical": "bold reverse #aa0000",#     #ff0000
-#         "value": "bold bright_white",  #       #ffffff
-#         "title": "bold purple",#             #af00ff
-#         "key": "italic magenta",#            #ff00ff
-#         "lines": "blue_violet",  #             #5f00ff
-#     }
-# )
 class Singleton(type):
     _instance_lock = threading.Lock()
     def __init__(cls, *args, **kwargs):
@@ -63,8 +33,38 @@ class MaxConsole(Console, metaclass=Singleton):
     def __call__(self, *args, **kwargs):
         return self
 
+def print_theme_colors():
+    console = MaxConsole()
+    color_sample = '◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎◼︎'
+    theme_colors = Table(
+        title="Theme Colors",
+        show_header=True,
+        show_lines=False,
+        show_edge=False,
+        width=80,
+        # padding=(1,1)
+    )
+    theme_colors.add_column("Color", justify="left", no_wrap=True, ratio=1)
+    theme_colors.add_column("Color Example", justify="center", no_wrap=True, ratio=3)
+    theme_colors.add_row("magenta", f"[magenta]{color_sample}[/]")
+    theme_colors.add_row("purple", f"[purple]{color_sample}[/]")
+    theme_colors.add_row("blue_violet", f"[blue_violet]{color_sample}[/]")
+    theme_colors.add_row("blue", f"[blue]{color_sample}[/]")
+    theme_colors.add_row("cornflower_blue", f"[cornflower_blue]{color_sample}[/]")
+    theme_colors.add_row("cyan", f"[cyan]{color_sample}[/]")
+    theme_colors.add_row("green", f"[green]{color_sample}[/]")
+    theme_colors.add_row("yellow", f"[yellow]{color_sample}[/]")
+    theme_colors.add_row("orange", f"[orange]{color_sample}[/]")
+    theme_colors.add_row("red", f"[red]{color_sample}[/]")
+    theme_colors.add_row("white", f"[white]{color_sample}[/]")
+    theme_colors.add_row("light_grey", f"[light_grey]{color_sample}[/]")
+    theme_colors.add_row("grey", f"[grey]{color_sample}[/]")
+    theme_colors.add_row("dark_grey", f"[dark_grey]{color_sample}[/DARK_GREY]")
+    theme_colors.add_row("black", f"[black]{color_sample}[/]")
+    console.clear()
+    console.print("\n\n")
+    console.print(theme_colors, justify="center")
+    console.print("\n\n\n\n")
 
 if __name__ == "__main__":
-    console = MaxConsole()
-    console.print("Hello, world!")
-    assert isinstance(console, MaxConsole), f"Expected MaxConsole, got {type(console)}"
+    print_theme_colors()
