@@ -1,6 +1,6 @@
-# MaxConsole v0.5.0
+# MaxConsole v0.5.1
 
-[![PyPI](https://img.shields.io/pypi/v/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - License](https://img.shields.io/pypi/l/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/)
+[![PyPI](https://img.shields.io/pypi/v/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - License](https://img.shields.io/pypi/l/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/) [![PyPI - Downloads](https://img.shields.io/pypi/dm/maxconsole?style=for-the-badge)](https://pypi.org/project/maxconsole/)[![pdm-managed](https://img.shields.io/badge/pdm-managed-blueviolet)](https://pdm.fming.dev)
 
 ![](https://i.imgur.com/4AtSGpB.png)
 
